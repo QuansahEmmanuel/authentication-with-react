@@ -1,0 +1,12 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+
+
+html {
+    background-color: #ffffff;
+}
+
+body {
+    height: 100vh;
+}
