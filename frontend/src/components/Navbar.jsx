@@ -1,8 +1,14 @@
 import { Link } from "react-router";
 import { useAuthStore } from "../lib/authStore";
+import { toast } from "react-hot-toast";
 
 const Navbar = () => {
     const { isAuthenticated, logout } = useAuthStore();
+
+    const handleLogout = () => {
+        toast.success("Logout successful");
+        logout();
+    };
 
     return (
         <div className="navbar bg-base-100 shadow-sm">
@@ -14,7 +20,7 @@ const Navbar = () => {
 
             <div className="flex-none">
                 {isAuthenticated ? (
-                    <button className="btn btn-primary" onClick={logout}>
+                    <button className="btn btn-primary" onClick={handleLogout}>
                         Logout
                     </button>
                 ) : (
